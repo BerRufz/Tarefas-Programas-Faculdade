@@ -1,0 +1,44 @@
+programa {
+
+  //Inclusão de biblioteca
+  inclua biblioteca Matematica
+
+  funcao inicio() {
+
+    //Declaração de variáveis
+    real altura
+    real peso
+    real imc
+    cadeia classificacao
+
+    //Recebimento de dados
+    escreva("Digite sua altura(metros): ")
+    leia(altura)
+    escreva("Digite seu peso(quilogramas)")
+    leia(peso)
+
+    //Cálculo do IMC
+    imc = peso / Matematica.potencia(altura, 2)
+    imc = Matematica.arredondar(imc, 2)
+
+    //Comparação de valores
+    se (imc < 18.5){
+      classificacao = "magreza"
+    }
+    senao se (imc >= 18.5 e imc < 25){
+      classificacao = "normal"
+    }
+    senao se (imc >= 25 e imc < 30){
+      classificacao = "sobrepeso"
+    }
+    senao se (imc >= 30 e imc < 40){
+      classificacao = "obesidade"
+    }
+    senao{
+      classificacao = "obesidade grave"
+    }
+
+    //Resposta ao usuário
+    escreva("O seu IMC é ",imc," e sua classificação é ",classificacao)
+  }
+}
